@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendar</title>
+    <script
+      src="https://kit.fontawesome.com/877261f25c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="navigation-header">
+      <nav>
+        <div class="logo-container">
+          <a href="./index.html"
+            ><img src="assets/FMDQ-Logo.png" alt="Company logo"
+          /></a>
+        </div>
+        <div class="navigation-items" id="navigation-items">
+          <a href="">About</a>
+          <a href="">Website</a>
+          <a href="">Contact Me</a>
+        </div>
+        <div class="hamburger">
+          <span id="openHam">&#9776;</span>
+          <span id="closeHam">&#x2716;</span>
+        </div>
+      </nav>
+    </header>
+    <section class="event-bg">
+      <h1>Event Scheduler</h1>
+    </section>
+    <section>
+      <div class="main-content">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-gap">
+        <p>Stay Connected with us on Social Media</p>
+        <div class="socials">
+          <img src="assets/Linkedin.png" alt="LinkedIn">
+          <img src="assets/Twitter.png" alt="twitter">
+          <img src="assets/Instagram.png" alt="instagram">
+          <img src="assets/Facebook.png" alt="facebook">
+        </div>
+      </div>
+      <div class="arr">
+        <p>Powered by  <img src="assets/FMDQ-Lines.png" alt="Lines"><span>iQx Consult</span></p>
+        <p>Copyright © FMDQGROUP. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      let openHam = document.querySelector("#openHam");
+      let closeHam = document.querySelector("#closeHam");
+      let navigationItems = document.querySelector("#navigation-items");
+
+      const hamburgerEvent = (navigation, close, open) => {
+        navigationItems.style.display = navigation;
+        closeHam.style.display = close;
+        openHam.style.display = open;
+      };
+
+      openHam.addEventListener("click", () =>
+        hamburgerEvent("flex", "block", "none")
+      );
+      closeHam.addEventListener("click", () =>
+        hamburgerEvent("none", "none", "block")
+      );
+    </script>
+  </body>
+</html>

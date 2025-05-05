@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  laravel-a:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Compliance-Calendar
+    ports:
+      - "9091:80"
+
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: host.docker.internal # or the IP of your Docker host
+      DB_PORT: 3307
+      DB_DATABASE: com_cal_db
+      DB_USERNAME: root
+      DB_PASSWORD: 123456
+    volumes:
+      - .:/var/www/html
